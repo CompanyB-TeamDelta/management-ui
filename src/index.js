@@ -4,10 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import store from './app/store';
+import { Provider as ReduxProvider } from 'react-redux';
+
+import { NextUIProvider } from '@nextui-org/react';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ReduxProvider store={store}>
+      <NextUIProvider>
+        <App />
+      </NextUIProvider>
+    </ReduxProvider>
   </React.StrictMode>
 );
 
